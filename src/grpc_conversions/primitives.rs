@@ -3,13 +3,14 @@ use std::collections::HashMap;
 use crate::prelude::point_id::PointIdOptions;
 use crate::prelude::{DeleteCollection, Value};
 use crate::qdrant::value::Kind;
+use crate::builders::DeleteCollectionBuilder;
 use crate::qdrant::{
     shard_key, with_payload_selector, with_vectors_selector, CollectionClusterInfoRequest,
-    CollectionExistsRequest, CreateSnapshotRequest, DeleteAlias, DeleteCollectionBuilder,
-    DeleteFullSnapshotRequest, GetCollectionInfoRequest, IsEmptyCondition, IsNullCondition,
-    ListCollectionAliasesRequest, ListSnapshotsRequest, PayloadExcludeSelector,
-    PayloadIncludeSelector, PointId, RepeatedIntegers, RepeatedStrings, ShardKey, ShardKeySelector,
-    SparseIndices, SparseVectorConfig, SparseVectorParams, Struct, VectorParams, VectorParamsDiff,
+    CollectionExistsRequest, CreateSnapshotRequest, DeleteAlias, DeleteFullSnapshotRequest,
+    GetCollectionInfoRequest, IsEmptyCondition, IsNullCondition, ListCollectionAliasesRequest,
+    ListSnapshotsRequest, PayloadExcludeSelector, PayloadIncludeSelector, PointId,
+    RepeatedIntegers, RepeatedStrings, ShardKey, ShardKeySelector, SparseIndices,
+    SparseVectorConfig, SparseVectorParams, Struct, VectorParams, VectorParamsDiff,
     VectorParamsDiffMap, VectorParamsMap, VectorsSelector, WithPayloadSelector,
     WithVectorsSelector,
 };

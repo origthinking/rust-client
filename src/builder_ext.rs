@@ -1,24 +1,28 @@
 use std::collections::HashMap;
 
 use crate::qdrant::update_collection_cluster_setup_request::Operation;
-use crate::qdrant::{
-    shard_key, AbortShardTransferBuilder, BinaryQuantizationBuilder, ClearPayloadPointsBuilder,
-    ContextExamplePair, CountPointsBuilder, CreateAliasBuilder, CreateCollectionBuilder,
+use crate::builders::{
+    AbortShardTransferBuilder, BinaryQuantizationBuilder, ClearPayloadPointsBuilder,
+    CountPointsBuilder, CreateAliasBuilder, CreateCollectionBuilder,
     CreateFieldIndexCollectionBuilder, CreateShardKeyRequestBuilder, DeleteCollectionBuilder,
     DeleteFieldIndexCollectionBuilder, DeletePayloadPointsBuilder, DeletePointVectorsBuilder,
-    DeletePointsBuilder, DeleteShardKey, DeleteShardKeyRequestBuilder,
-    DeleteSnapshotRequestBuilder, DiscoverBatchPointsBuilder, DiscoverPoints,
-    DiscoverPointsBuilder, Distance, FacetCountsBuilder, FieldType, GetPointsBuilder,
-    LookupLocationBuilder, MoveShardBuilder, PayloadExcludeSelector, PayloadIncludeSelector,
-    PointId, PointStruct, PointVectors, PointsUpdateOperation, ProductQuantizationBuilder,
-    QuantizationType, QueryBatchPointsBuilder, QueryPointGroupsBuilder, QueryPoints,
-    QueryPointsBuilder, RecommendBatchPointsBuilder, RecommendExample, RecommendPointGroupsBuilder,
-    RecommendPoints, RecommendPointsBuilder, RenameAliasBuilder, ReplicaBuilder,
+    DeletePointsBuilder, DeleteShardKeyRequestBuilder, DeleteSnapshotRequestBuilder,
+    DiscoverBatchPointsBuilder, DiscoverPointsBuilder, FacetCountsBuilder, GetPointsBuilder,
+    LookupLocationBuilder, MoveShardBuilder, ProductQuantizationBuilder, QueryBatchPointsBuilder,
+    QueryPointGroupsBuilder, QueryPointsBuilder, RecommendBatchPointsBuilder,
+    RecommendPointGroupsBuilder, RecommendPointsBuilder, RenameAliasBuilder, ReplicaBuilder,
     ReplicateShardBuilder, ScalarQuantizationBuilder, ScrollPointsBuilder,
-    SearchBatchPointsBuilder, SearchMatrixPointsBuilder, SearchPointGroupsBuilder, SearchPoints,
-    SearchPointsBuilder, SetPayloadPointsBuilder, ShardKey, UpdateBatchPointsBuilder,
-    UpdateCollectionBuilder, UpdateCollectionClusterSetupRequestBuilder, UpdatePointVectorsBuilder,
-    UpsertPointsBuilder, Value, VectorParamsBuilder, VectorsSelector, WithLookupBuilder,
+    SearchBatchPointsBuilder, SearchMatrixPointsBuilder, SearchPointGroupsBuilder,
+    SearchPointsBuilder, SetPayloadPointsBuilder, UpdateBatchPointsBuilder,
+    UpdateCollectionBuilder, UpdateCollectionClusterSetupRequestBuilder,
+    UpdatePointVectorsBuilder, UpsertPointsBuilder, VectorParamsBuilder, WithLookupBuilder,
+};
+use crate::builder_types::RecommendExample;
+use crate::qdrant::{
+    shard_key, ContextExamplePair, DeleteShardKey, DiscoverPoints, Distance, FieldType,
+    PayloadExcludeSelector, PayloadIncludeSelector, PointId, PointStruct, PointVectors,
+    PointsUpdateOperation, QuantizationType, QueryPoints, RecommendPoints, SearchPoints, ShardKey,
+    Value, VectorsSelector,
 };
 
 impl VectorParamsBuilder {
